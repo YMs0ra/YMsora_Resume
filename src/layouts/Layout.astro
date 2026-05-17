@@ -22,17 +22,15 @@ const {
         color-scheme: dark;
         --bg: #070816;
         --bg-soft: rgba(20, 24, 48, 0.72);
-        --card: rgba(13, 18, 38, 0.78);
-        --card-strong: rgba(18, 24, 48, 0.92);
+        --card: rgba(13, 18, 38, 0.92);
+        --card-strong: rgba(16, 20, 40, 0.96);
         --line: rgba(255, 255, 255, 0.12);
         --text: #f5f7ff;
         --muted: #a8b1d1;
         --accent: #7c3aed;
         --accent-2: #06b6d4;
         --accent-3: #f472b6;
-        --shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
-        --mouse-x: 50vw;
-        --mouse-y: 50vh;
+        --shadow: 0 20px 50px rgba(0, 0, 0, 0.34);
       }
 
       * {
@@ -48,10 +46,8 @@ const {
       body {
         font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         background:
-          radial-gradient(circle at 20% 20%, rgba(124, 58, 237, 0.30), transparent 22%),
-          radial-gradient(circle at 80% 0%, rgba(6, 182, 212, 0.22), transparent 28%),
-          radial-gradient(circle at 50% 100%, rgba(244, 114, 182, 0.18), transparent 24%),
-          linear-gradient(135deg, #05060f 0%, #090b1c 42%, #120f28 100%);
+          linear-gradient(180deg, rgba(124, 58, 237, 0.08), transparent 24%),
+          linear-gradient(135deg, #05060f 0%, #090b1c 48%, #120f28 100%);
         color: var(--text);
         overflow-x: hidden;
       }
@@ -60,26 +56,26 @@ const {
       body::after {
         content: "";
         position: fixed;
-        inset: auto;
-        width: 28rem;
-        height: 28rem;
-        border-radius: 999px;
-        filter: blur(90px);
-        opacity: 0.42;
         pointer-events: none;
         z-index: 0;
       }
 
       body::before {
-        top: -8rem;
-        left: -8rem;
-        background: rgba(124, 58, 237, 0.55);
+        inset: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 30px;
+        box-shadow:
+          inset 0 0 0 1px rgba(6, 182, 212, 0.05),
+          0 0 0 1px rgba(124, 58, 237, 0.05);
       }
 
       body::after {
-        right: -10rem;
-        bottom: -10rem;
-        background: rgba(6, 182, 212, 0.35);
+        left: 18px;
+        right: 18px;
+        top: 18px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.45), rgba(124, 58, 237, 0.35), transparent);
+        opacity: 0.75;
       }
 
       a {
@@ -100,459 +96,69 @@ const {
         padding: 40px 0 72px;
       }
 
-      .ambient-space {
-        position: fixed;
-        inset: 0;
-        pointer-events: none;
-        z-index: 0;
-        overflow: hidden;
-      }
-
-      .mouse-glow {
-        position: absolute;
-        left: calc(var(--mouse-x) - 13rem);
-        top: calc(var(--mouse-y) - 13rem);
-        width: 26rem;
-        height: 26rem;
-        border-radius: 999px;
-        background: radial-gradient(circle, rgba(244, 114, 182, 0.14) 0%, rgba(6, 182, 212, 0.11) 35%, rgba(124, 58, 237, 0.05) 58%, transparent 72%);
-        filter: blur(34px);
-        opacity: 0.42;
-        transition: left 220ms ease-out, top 220ms ease-out, opacity 220ms ease-out;
-        mix-blend-mode: screen;
-      }
-
-      .space-ribbon {
-        position: absolute;
-        inset: auto;
-        border-radius: 999px;
-        filter: blur(42px);
-        opacity: 0.34;
-      }
-
-      .ribbon-a {
-        top: 6%;
-        left: -10%;
-        width: 46vw;
-        height: 14rem;
-        background: linear-gradient(90deg, rgba(124, 58, 237, 0), rgba(124, 58, 237, 0.22), rgba(6, 182, 212, 0.18), rgba(244, 114, 182, 0));
-        animation: ribbonDriftA 20s ease-in-out infinite;
-      }
-
-      .ribbon-b {
-        right: -12%;
-        bottom: 8%;
-        width: 42vw;
-        height: 16rem;
-        background: linear-gradient(90deg, rgba(6, 182, 212, 0), rgba(6, 182, 212, 0.2), rgba(244, 114, 182, 0.16), rgba(124, 58, 237, 0));
-        animation: ribbonDriftB 24s ease-in-out infinite;
-      }
-
-      .side-rail {
-        position: absolute;
-        top: 3.5vh;
-        bottom: 3.5vh;
-        width: 84px;
-        opacity: 0.52;
-      }
-
-      .left-rail {
-        left: 18px;
-      }
-
-      .right-rail {
-        right: 18px;
-      }
-
-      .rail-line,
-      .rail-glow {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        border-radius: 999px;
-      }
-
-      .rail-line {
-        top: 0;
-        bottom: 0;
-        width: 1px;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.16), rgba(6, 182, 212, 0.3), rgba(255, 255, 255, 0.04));
-      }
-
-      .rail-glow {
-        top: 12%;
-        width: 18px;
-        height: 22%;
-        background: linear-gradient(180deg, rgba(124, 58, 237, 0), rgba(124, 58, 237, 0.35), rgba(6, 182, 212, 0.28), rgba(244, 114, 182, 0));
-        filter: blur(10px);
-        animation: railTravel 9s ease-in-out infinite;
-      }
-
-      .rail-dot {
-        position: absolute;
-        left: 50%;
-        width: 8px;
-        height: 8px;
-        border-radius: 999px;
-        transform: translateX(-50%);
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.95), rgba(6, 182, 212, 0.55), transparent 72%);
-        box-shadow: 0 0 16px rgba(6, 182, 212, 0.25);
-      }
-
-      .rail-dot-1 { top: 14%; }
-      .rail-dot-2 { top: 48%; }
-      .rail-dot-3 { top: 82%; }
-
-      .corner {
-        position: absolute;
-        width: 92px;
-        height: 92px;
-        opacity: 0.8;
-      }
-
-      .corner::before,
-      .corner::after {
-        content: "";
-        position: absolute;
-        background: linear-gradient(90deg, rgba(124, 58, 237, 0.9), rgba(6, 182, 212, 0.55), rgba(255, 255, 255, 0.18));
-        box-shadow: 0 0 18px rgba(124, 58, 237, 0.22);
-      }
-
-      .corner::before {
-        width: 56px;
-        height: 2px;
-      }
-
-      .corner::after {
-        width: 2px;
-        height: 56px;
-      }
-
-      .corner-tl { top: 18px; left: 18px; }
-      .corner-tl::before,
-      .corner-bl::before { left: 0; top: 0; }
-      .corner-tl::after,
-      .corner-tr::after { left: 0; top: 0; }
-
-      .corner-tr { top: 18px; right: 18px; transform: scaleX(-1); }
-      .corner-bl { bottom: 18px; left: 18px; transform: scaleY(-1); }
-      .corner-br { bottom: 18px; right: 18px; transform: scale(-1); }
-
-      .beam {
-        position: absolute;
-        top: 12%;
-        bottom: 12%;
-        width: 18px;
-        border-radius: 999px;
-        filter: blur(18px);
-        opacity: 0.18;
-      }
-
-      .beam-left {
-        left: 7.5%;
-        background: linear-gradient(180deg, rgba(124, 58, 237, 0), rgba(124, 58, 237, 0.22), rgba(6, 182, 212, 0.14), rgba(124, 58, 237, 0));
-        animation: beamShift 14s ease-in-out infinite;
-      }
-
-      .beam-right {
-        right: 7.5%;
-        background: linear-gradient(180deg, rgba(6, 182, 212, 0), rgba(6, 182, 212, 0.22), rgba(244, 114, 182, 0.14), rgba(6, 182, 212, 0));
-        animation: beamShift 16s ease-in-out infinite reverse;
-      }
-
-      .edge-grid {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: min(16vw, 180px);
-        opacity: 0.1;
-        background-image:
-          linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-        background-size: 22px 22px;
-        mask-image: linear-gradient(180deg, transparent, black 12%, black 88%, transparent), linear-gradient(90deg, black 0%, black 70%, transparent 100%);
-        animation: gridDrift 22s linear infinite;
-      }
-
-      .edge-grid-left {
-        left: 0;
-      }
-
-      .edge-grid-right {
-        right: 0;
-        transform: scaleX(-1);
-      }
-
-      .particle-field {
-        position: absolute;
-        inset: 0;
-      }
-
-      .particle {
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-radius: 999px;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.85) 0%, rgba(6, 182, 212, 0.4) 40%, rgba(124, 58, 237, 0.08) 72%, transparent 100%);
-        box-shadow: 0 0 14px rgba(6, 182, 212, 0.16);
-        opacity: 0.34;
-      }
-
-      .p1 { top: 12%; left: 8%; animation: particleFloat 12s ease-in-out infinite; }
-      .p2 { top: 26%; left: 90%; width: 8px; height: 8px; animation: particleFloat 16s ease-in-out infinite 1s; }
-      .p3 { top: 72%; left: 6%; width: 7px; height: 7px; animation: particleFloat 14s ease-in-out infinite 2s; }
-      .p4 { top: 84%; left: 88%; width: 12px; height: 12px; animation: particleFloat 18s ease-in-out infinite 0.5s; }
-      .p5 { top: 48%; left: 4%; width: 6px; height: 6px; animation: particleFloat 15s ease-in-out infinite 1.4s; }
-      .p6 { top: 8%; left: 78%; width: 9px; height: 9px; animation: particleFloat 13s ease-in-out infinite 0.7s; }
-      .p7 { top: 58%; left: 94%; width: 6px; height: 6px; animation: particleFloat 17s ease-in-out infinite 2.2s; }
-      .p8 { top: 90%; left: 18%; width: 8px; height: 8px; animation: particleFloat 19s ease-in-out infinite 1.2s; }
-      .p9 { top: 18%; left: 2.5%; width: 5px; height: 5px; animation: particleFloat 11s ease-in-out infinite 0.3s; }
-      .p10 { top: 34%; left: 97%; width: 7px; height: 7px; animation: particleFloat 15s ease-in-out infinite 2.4s; }
-      .p11 { top: 66%; left: 1.5%; width: 9px; height: 9px; animation: particleFloat 18s ease-in-out infinite 1.8s; }
-      .p12 { top: 14%; left: 95%; width: 5px; height: 5px; animation: particleFloat 13s ease-in-out infinite 0.9s; }
-
       .page-shell::before,
       .page-shell::after {
         content: "";
         position: fixed;
-        inset: 18px;
-        border-radius: 36px;
         pointer-events: none;
         z-index: -1;
       }
 
       .page-shell::before {
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        box-shadow:
-          inset 0 0 28px rgba(255, 255, 255, 0.02),
-          0 0 80px rgba(124, 58, 237, 0.12),
-          0 0 120px rgba(6, 182, 212, 0.08);
-        animation: shellPulse 10s ease-in-out infinite;
+        inset: 32px;
+        border-radius: 24px;
+        background:
+          linear-gradient(90deg, transparent 0%, rgba(6, 182, 212, 0.1) 16%, transparent 18%),
+          linear-gradient(180deg, transparent 0%, rgba(124, 58, 237, 0.08) 18%, transparent 22%);
+        background-size: 100% 100%, 100% 100%;
+        opacity: 0.5;
       }
 
       .page-shell::after {
-        inset: 8px;
-        background:
-          linear-gradient(115deg, rgba(124, 58, 237, 0.22), transparent 24%, transparent 72%, rgba(6, 182, 212, 0.2)),
-          linear-gradient(220deg, rgba(244, 114, 182, 0.12), transparent 30%, transparent 68%, rgba(124, 58, 237, 0.14));
-        opacity: 0.5;
-        filter: blur(24px);
-        animation: edgeWave 14s linear infinite;
+        inset: 24px;
+        border-radius: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.04);
       }
 
-      @keyframes blobFloatOne {
-        0%,
-        100% {
-          transform: translate3d(0, 0, 0) scale(1);
-          opacity: 0.4;
-        }
-        50% {
-          transform: translate3d(40px, 30px, 0) scale(1.12);
-          opacity: 0.62;
-        }
+      .hud-corner {
+        position: fixed;
+        width: 84px;
+        height: 84px;
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.75;
       }
 
-      @keyframes blobFloatTwo {
-        0%,
-        100% {
-          transform: translate3d(0, 0, 0) scale(1);
-          opacity: 0.28;
-        }
-        50% {
-          transform: translate3d(-45px, -28px, 0) scale(1.15);
-          opacity: 0.46;
-        }
+      .hud-corner::before,
+      .hud-corner::after {
+        content: "";
+        position: absolute;
+        background: linear-gradient(90deg, rgba(6, 182, 212, 0.75), rgba(124, 58, 237, 0.4));
       }
 
-      @keyframes shellPulse {
-        0%,
-        100% {
-          opacity: 0.75;
-          transform: scale(1);
-        }
-        50% {
-          opacity: 1;
-          transform: scale(1.01);
-        }
+      .hud-corner::before {
+        width: 52px;
+        height: 2px;
       }
 
-      @keyframes edgeWave {
-        0% {
-          transform: rotate(0deg) scale(1);
-        }
-        50% {
-          transform: rotate(2deg) scale(1.015);
-        }
-        100% {
-          transform: rotate(0deg) scale(1);
-        }
+      .hud-corner::after {
+        width: 2px;
+        height: 52px;
       }
 
-      @keyframes ribbonDriftA {
-        0%,
-        100% {
-          transform: translate3d(0, 0, 0) rotate(-8deg) scale(1);
-          opacity: 0.42;
-        }
-        50% {
-          transform: translate3d(5vw, 2vh, 0) rotate(-3deg) scale(1.08);
-          opacity: 0.7;
-        }
-      }
-
-      @keyframes ribbonDriftB {
-        0%,
-        100% {
-          transform: translate3d(0, 0, 0) rotate(12deg) scale(1);
-          opacity: 0.36;
-        }
-        50% {
-          transform: translate3d(-4vw, -3vh, 0) rotate(5deg) scale(1.1);
-          opacity: 0.62;
-        }
-      }
-
-      @keyframes railTravel {
-        0%,
-        100% {
-          top: 10%;
-          opacity: 0.25;
-        }
-        50% {
-          top: 68%;
-          opacity: 0.85;
-        }
-      }
-
-      @keyframes beamShift {
-        0%,
-        100% {
-          transform: translateY(0) scaleY(1);
-          opacity: 0.2;
-        }
-        50% {
-          transform: translateY(-18px) scaleY(1.08);
-          opacity: 0.46;
-        }
-      }
-
-      @keyframes gridDrift {
-        0% {
-          background-position: 0 0, 0 0;
-        }
-        100% {
-          background-position: 0 42px, 42px 0;
-        }
-      }
-
-      @keyframes particleFloat {
-        0%,
-        100% {
-          transform: translate3d(0, 0, 0) scale(0.92);
-          opacity: 0.28;
-        }
-        50% {
-          transform: translate3d(0, -24px, 0) scale(1.18);
-          opacity: 0.85;
-        }
-      }
-
-      body::before {
-        animation: blobFloatOne 16s ease-in-out infinite;
-      }
-
-      body::after {
-        animation: blobFloatTwo 18s ease-in-out infinite;
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        body::before,
-        body::after,
-        .page-shell::before,
-        .page-shell::after,
-        .space-ribbon,
-        .particle,
-        .mouse-glow {
-          animation: none !important;
-          transition: none !important;
-        }
-
-        .mouse-glow,
-        .particle-field {
-          display: none;
-        }
-      }
+      .hud-tl { top: 24px; left: 24px; }
+      .hud-tr { top: 24px; right: 24px; transform: scaleX(-1); }
+      .hud-bl { bottom: 24px; left: 24px; transform: scaleY(-1); }
+      .hud-br { bottom: 24px; right: 24px; transform: scale(-1); }
     </style>
   </head>
   <body>
-    <div class="ambient-space" aria-hidden="true">
-      <div class="mouse-glow"></div>
-      <div class="space-ribbon ribbon-a"></div>
-      <div class="space-ribbon ribbon-b"></div>
-      <div class="side-rail left-rail">
-        <span class="rail-line"></span>
-        <span class="rail-glow"></span>
-        <span class="rail-dot rail-dot-1"></span>
-        <span class="rail-dot rail-dot-2"></span>
-        <span class="rail-dot rail-dot-3"></span>
-      </div>
-      <div class="side-rail right-rail">
-        <span class="rail-line"></span>
-        <span class="rail-glow"></span>
-        <span class="rail-dot rail-dot-1"></span>
-        <span class="rail-dot rail-dot-2"></span>
-        <span class="rail-dot rail-dot-3"></span>
-      </div>
-      <div class="corner corner-tl"></div>
-      <div class="corner corner-tr"></div>
-      <div class="corner corner-bl"></div>
-      <div class="corner corner-br"></div>
-      <div class="beam beam-left"></div>
-      <div class="beam beam-right"></div>
-      <div class="edge-grid edge-grid-left"></div>
-      <div class="edge-grid edge-grid-right"></div>
-      <div class="particle-field">
-        <span class="particle p1"></span>
-        <span class="particle p2"></span>
-        <span class="particle p3"></span>
-        <span class="particle p4"></span>
-        <span class="particle p5"></span>
-        <span class="particle p6"></span>
-        <span class="particle p7"></span>
-        <span class="particle p8"></span>
-        <span class="particle p9"></span>
-        <span class="particle p10"></span>
-        <span class="particle p11"></span>
-        <span class="particle p12"></span>
-      </div>
-    </div>
+    <div class="hud-corner hud-tl" aria-hidden="true"></div>
+    <div class="hud-corner hud-tr" aria-hidden="true"></div>
+    <div class="hud-corner hud-bl" aria-hidden="true"></div>
+    <div class="hud-corner hud-br" aria-hidden="true"></div>
     <div class="page-shell">
       <slot />
     </div>
-    <script is:inline>
-      (() => {
-        const root = document.documentElement;
-        const coarse = window.matchMedia('(pointer: coarse)').matches;
-        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-        if (coarse || reduce) {
-          root.style.setProperty('--mouse-x', '50vw');
-          root.style.setProperty('--mouse-y', '50vh');
-          return;
-        }
-
-        let rafId = 0;
-        const updatePointer = (event) => {
-          const { clientX, clientY } = event;
-          if (rafId) cancelAnimationFrame(rafId);
-          rafId = requestAnimationFrame(() => {
-            root.style.setProperty('--mouse-x', `${clientX}px`);
-            root.style.setProperty('--mouse-y', `${clientY}px`);
-          });
-        };
-
-        window.addEventListener('pointermove', updatePointer, { passive: true });
-      })();
-    </script>
   </body>
 </html>

@@ -46,6 +46,20 @@ highlights:
       - Web Security
       - High Risk
       - PHP
+  - title: Jellycat 主站RCE
+    summary: 独立审计并提交 Jettycat 主站RCE，SQL注入，巨量订单泄露
+    tags:
+      - Web Security
+      - High Risk
+      - PHP
+      - CMS
+  - title: 山东某大型教育公司主站RCE
+    summary: 独立审计并提交主站RCE，获取到Root
+    tags:
+      - Web Security
+      - High Risk
+      - PHP
+      - CMS
   - title: 黑盒项目实战
     summary: 参与多项黑盒项目，成功挖掘 RCE、调试信息泄露等高价值问题
     tags:
