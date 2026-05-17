@@ -15,7 +15,7 @@ tags:
   - Python
   - 漏洞研究
   - IoT 安全
-  - AI 开发
+  - AI 开发,安全
 intro:
   - 杭州师范大学本科在读，专注信息安全与 Web 漏洞研究
   - V&N 战队 Web 方向选手
@@ -127,12 +127,16 @@ skill_groups:
       - ffuf
       - dirsearch
       - Docker
+      - wireshark
+      - nuclei
   - title: 能力方向
     items:
       - 代码审计流程与漏洞链分析
+      - 流量分析，内网渗透，lot固件分析
       - 漏洞复现与 POC 编写
       - 技术报告输出
       - 沙箱逃逸与 SSRF 跨域研究
+      - 同源策略，CVE
 projects:
   - title: 多协作安全 Agent
     meta: 独立开发者 / 安全自动化
