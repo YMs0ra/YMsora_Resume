@@ -80,7 +80,7 @@ competitions:
     result: 总排名第一
     type: 综合排名
   - name: ACTF2026
-    result: 总排名第 17
+    result: 总排名第 17(一血)
     type: XCTF 分站
   - name: BearcatCTF
     result: 总排名第 22
