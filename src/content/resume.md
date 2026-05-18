@@ -83,16 +83,22 @@ competitions:
     result: 总排名第 17(一血)
     type: XCTF 分站
   - name: BearcatCTF
-    result: 总排名第 22
+    result: 总排名第 21
     type: 综合排名
   - name: SUCTF2026
-    result: 总排名第 21
+    result: 总排名第 20
     type: 综合排名
   - name: AliyunCTF2026
     result: 总排名第 37
     type: 综合排名
   - name: LilacCTF2026
-    result: 前 30
+    result: 总排名第 22
+    type: 综合排名
+  - name: 0CTF2025
+    result: 第49
+    type: 综合排名
+  - name: 0xFUN CTF2026
+    result: 总排名第 57
     type: 综合排名
   - name: GEEKCTF2025
     result: Web 方向前 5
