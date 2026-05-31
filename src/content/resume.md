@@ -15,7 +15,7 @@ tags:
   - Python
   - 漏洞研究
   - IoT 安全
-  - AI 开发
+  - AI 开发,安全
 intro:
   - 杭州师范大学本科在读，专注信息安全与 Web 漏洞研究
   - V&N 战队 Web 方向选手
@@ -90,16 +90,22 @@ competitions:
     result:总排名第 47
     type: 御网杯2026
   - name: BearcatCTF
-    result: 总排名第 22
+    result: 总排名第 21
     type: 综合排名
   - name: SUCTF2026
-    result: 总排名第 21
+    result: 总排名第 20
     type: 综合排名
   - name: AliyunCTF2026
     result: 总排名第 37
     type: 综合排名
   - name: LilacCTF2026
-    result: 前 30
+    result: 总排名第 22
+    type: 综合排名
+  - name: 0CTF2025
+    result: 第49
+    type: 综合排名
+  - name: 0xFUN CTF2026
+    result: 总排名第 57
     type: 综合排名
   - name: GEEKCTF2025
     result: Web 方向前 5
@@ -134,12 +140,16 @@ skill_groups:
       - ffuf
       - dirsearch
       - Docker
+      - wireshark
+      - nuclei
   - title: 能力方向
     items:
       - 代码审计流程与漏洞链分析
+      - 流量分析，内网渗透，lot固件分析
       - 漏洞复现与 POC 编写
       - 技术报告输出
       - 沙箱逃逸与 SSRF 跨域研究
+      - 同源策略，CVE
 projects:
   - title: 多协作安全 Agent
     meta: 独立开发者 / 安全自动化
