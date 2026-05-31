@@ -72,6 +72,10 @@ highlights:
       - Multi-Agent
       - Automation
       - Security
+  - title: 参与黑龙江省hvv
+    summary: 独立渗透挖掘多个高危，超危漏洞，RCE，数据库接管
+    tags:
+      - Web Security
 competitions:
   - name: BroncoCTF
     result: 总排名第一
@@ -82,6 +86,9 @@ competitions:
   - name: ACTF2026
     result: 总排名第 17(一血)
     type: XCTF 分站
+  - name: 线上一等奖
+    result:总排名第 47
+    type: 御网杯2026
   - name: BearcatCTF
     result: 总排名第 22
     type: 综合排名
