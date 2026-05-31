@@ -87,7 +87,7 @@ competitions:
     result: 总排名第 17(一血)
     type: XCTF 分站
   - name: 线上一等奖
-    result:总排名第 47
+    result: 总排名第 47
     type: 御网杯2026
   - name: BearcatCTF
     result: 总排名第 21
