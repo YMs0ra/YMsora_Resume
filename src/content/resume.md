@@ -23,7 +23,7 @@ intro:
 stats:
   - value: "Top 10"
     label: Matomo 2026 HOF
-    note: Hacker 名人堂年榜前 10
+    note: Hackerone 名人堂
   - value: "CTF TOP"
     label: CTF
     note: CTFtime个人及联队中国前百
@@ -86,9 +86,9 @@ competitions:
   - name: ACTF2026
     result: 总排名第 17(一血)
     type: XCTF 分站
-  - name: 线上一等奖
+  - name: 御网杯2026
     result: 总排名第 47
-    type: 御网杯2026
+    type: 线上一等奖🥇
   - name: BearcatCTF
     result: 总排名第 21
     type: 综合排名
