@@ -21,7 +21,7 @@ intro:
   - V&N 战队 Web 方向选手
   - 杭州师范大学 Teamgipsy 成员，专注 Web 安全方向
 stats:
-  - value: "Top 10"
+  - value: "TOP"
     label: Matomo 2026 HOF
     note: Hackerone 名人堂
   - value: "CTF TOP"
@@ -30,6 +30,9 @@ stats:
   - value: "VRP"
     label: Google
     note: 谷歌 VRP 名人堂成员
+  - value: "MSRC"
+    label: Microsoft 
+    note: Microsoft SRC成员
   - value: "60%+"
     label: 国际赛 Web
     note: 多场比赛稳定输出
@@ -47,7 +50,7 @@ highlights:
       - High Risk
       - PHP
   - title: Jellycat 主站RCE
-    summary: 独立审计并提交 Jettycat 主站RCE，SQL注入，巨量订单泄露
+    summary: 独立审计并提交 Jellycat 主站RCE
     tags:
       - Web Security
       - High Risk
@@ -124,6 +127,7 @@ skill_groups:
       - JavaScript
       - PHP
       - TypeScript
+      - C++
   - title: Web 漏洞
     items:
       - SQL 注入
@@ -150,11 +154,13 @@ skill_groups:
       - 技术报告输出
       - 沙箱逃逸与 SSRF 跨域研究
       - 同源策略，CVE
+      - 免杀编写，loder以及加密方式
 projects:
   - title: 多协作安全 Agent
     meta: 独立开发者 / 安全自动化
     summary: 面向安全场景设计的多 Agent 协作系统，支持 CTF 解题、代码审计与漏洞分析。
     bullets:
+      - 仓库 YMs0ra/CTFSTAR
       - 围绕任务分发、上下文压缩、记忆管理与结果校验构建流程化协作链路
       - 已在比赛环境中完成效果验证
     tags:
