@@ -29,7 +29,7 @@ stats:
     note: CTFtime个人及联队中国前百
   - value: "VRP"
     label: Google
-    note: 谷歌 VRP 名人堂成员
+    note: 谷歌 VRP 名人堂中国前30
   - value: "MSRC"
     label: Microsoft 
     note: Microsoft SRC成员
