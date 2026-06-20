@@ -33,6 +33,9 @@ stats:
   - value: "MSRC"
     label: Microsoft 
     note: Microsoft SRC成员
+  - value: "HOF 2026"
+    label: Chia Network
+    note: Chia Network 名人堂成员
   - value: "60%+"
     label: 国际赛 Web
     note: 多场比赛稳定输出
