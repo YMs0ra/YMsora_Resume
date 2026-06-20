@@ -21,15 +21,15 @@ intro:
   - V&N 战队 Web 方向选手
   - 杭州师范大学 Teamgipsy 成员，专注 Web 安全方向
 stats:
-  - value: "TOP"
-    label: Matomo 2026 HOF
+  - value: "TOP 10"
+    label: Matomo 2026 HOF 
     note: Hackerone 名人堂
   - value: "CTF TOP"
     label: CTF
     note: CTFtime个人及联队中国前百
   - value: "VRP"
     label: Google
-    note: 谷歌 VRP 名人堂成员
+    note: Google VRP 名人堂 中国前30
   - value: "MSRC"
     label: Microsoft 
     note: Microsoft SRC成员
@@ -52,22 +52,8 @@ highlights:
       - Web Security
       - High Risk
       - PHP
-  - title: Jellycat 主站RCE
-    summary: 独立审计并提交 Jellycat 主站RCE
-    tags:
-      - Web Security
-      - High Risk
-      - PHP
-      - CMS
-  - title: 山东某大型教育公司主站RCE
-    summary: 独立审计并提交主站RCE，获取到Root
-    tags:
-      - Web Security
-      - High Risk
-      - PHP
-      - CMS
   - title: 黑盒项目实战
-    summary: 参与多项黑盒项目，成功挖掘 RCE、调试信息泄露等高价值问题
+    summary: 参与多项黑盒项目，成功挖掘 RCE、调试信息泄露等高价值问题，拿到数10个shell，root
     tags:
       - RCE
       - Blackbox
@@ -78,7 +64,8 @@ highlights:
       - Multi-Agent
       - Automation
       - Security
-  - title: 参与黑龙江省hvv
+      - 仓库 YMs0ra/CTFSTAR
+  - title: 参与黑龙江省护
     summary: 独立渗透挖掘多个高危，超危漏洞，RCE，数据库接管
     tags:
       - Web Security
