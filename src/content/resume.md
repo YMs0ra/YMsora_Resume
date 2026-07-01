@@ -32,7 +32,7 @@ stats:
     note: Google VRP 名人堂 中国前30
   - value: "MSRC"
     label: Microsoft 
-    note: Microsoft SRC成员
+    note: Microsoft SRC赏金猎人
   - value: "HOF 2026"
     label: Chia Network
     note: Chia Network 名人堂成员
@@ -40,6 +40,13 @@ stats:
     label: 国际赛 Web
     note: 多场比赛稳定输出
 highlights:
+  - title: 微软 MSRC 高价值安全研究
+    summary: 面向微软真实攻击面完成高价值漏洞挖掘与负责任披露，漏洞结果获得 Microsoft Security Response Center 确认，累计获得万余美元级赏金
+    tags:
+      - MSRC
+      - Bug Bounty
+      - Vulnerability Research
+      - High Impact
   - title: Google 高危 s2 漏洞
     summary: 独立完成审计并提交 Google 高危 s2 漏洞
     tags:
